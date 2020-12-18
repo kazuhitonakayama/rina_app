@@ -766,7 +766,11 @@ img.bookmark-banner1 {
 @media screen and (max-width: 500px ) {
     .login-upper-sentencearea {
         transform: translate(-148px, 35px);
-    }
+        -webkit-transform: translate(-148px, 35px);
+        -moz-transform: translate(-148px, 35px);
+        -ms-transform: translate(-148px, 35px);
+        -o-transform: translate(-148px, 35px);
+}
     
     .allicon {
         display: flex;

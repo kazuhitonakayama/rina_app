@@ -405,6 +405,10 @@ i.far.fa-bookmark.fa-2x.at_place_show {
 i.fas.fa-heart.at_place_show_under{
     transform: translate(-4px, 8px);
     z-index: 2;
+    -webkit-transform: translate(-4px, 8px);
+    -moz-transform: translate(-4px, 8px);
+    -ms-transform: translate(-4px, 8px);
+    -o-transform: translate(-4px, 8px);
 }
 
 .usericonarea_place_show{
