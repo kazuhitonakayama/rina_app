@@ -8,7 +8,7 @@
 
         <div class="usericonarea">
             <% if @user.image.present? %>
-                <%= image_tag @user.image_url, size: "50x50",class: 'usericon_userindex' %>
+                <%= image_tag @user.image_url, size: "30x30",class: 'usericon_userindex' %>
             <% else %>
                 <i class="fas fa-user-circle fa-3x" style="color:#B0AFAF"></i>
             <% end %>
@@ -16,11 +16,11 @@
                 <%= @user.name  %>
             </p>
             <div class="twoicons_mypage"> 
-                <%= link_to(content_tag(:i, '', class: 'fas fa-user-edit fa-2x'), edit_user_registration_path) %>
+                <%= link_to(content_tag(:i, '', class: 'fas fa-user-edit'), edit_user_registration_path) %>
             
 
                     <!-- Button trigger modal -->
-                    <i class="fas fa-sign-out-alt fa-2x" data-toggle="modal" data-target="#exampleModalCenter"></i>
+                    <i class="fas fa-sign-out-alt" data-toggle="modal" data-target="#exampleModalCenter"></i>
                     
 
                     <!-- Modal -->
@@ -79,7 +79,7 @@
 
                             <div class="usericonarea_post">
                                 <% if @user.image.present? %>
-                                    <%= image_tag @user.image_url, size: "50x50",class: 'usericon_userindex' %>
+                                    <%= image_tag @user.image_url, size: "35x35",class: 'usericon_userindex' %>
                                 <% else %>
                                     <i class="fas fa-user-circle fa-2x" style="color:#B0AFAF"></i>
                                 <% end %>
@@ -112,7 +112,7 @@
 
                                 
                                 <div class="twoicons_post">
-                                     <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id)) %>
+                                     <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id),data: {"turbolinks"=>false}) %>
                                 
                                     <% if user_signed_in? %>
                                         <% if current_user.already_liked?(p) %>

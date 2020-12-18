@@ -54,10 +54,14 @@ input#pac-input {
     display: none;
 }
 .newpostarea{
-    width: 60%;
+    width: 80%;
     height:35px;
     background-color: #ffd252;
     margin-top: 20px;
+}
+
+.newpostcontent{
+    width: 100%;
 }
 
 .newpost_textarea{
@@ -70,7 +74,6 @@ input#pac-input {
 
 .field_newpost{
     margin-top: 20px;
-    margin-left: 30px;
 }
 
 .formbox_newpost{
@@ -88,7 +91,11 @@ input#file-upload-bottom{
 .formbox_newpost_photo{
     height: 30px;
     margin-top: 20px;
-    margin-left: 30px;
+    display: flex;
+}
+
+.profileimagetext{
+    color: #646464;
 }
 
 .fa-images:before {
@@ -104,7 +111,7 @@ input#file-upload-bottom{
 }
 
 select#place_genre_id {
-    width: 60%;
+    width: 70%;
     height: 40px;
     border-radius: 10px 10px 10px 10px;
     border: 1px solid #646464;
@@ -137,7 +144,7 @@ select#place_genre_id {
 }
 
 form#new_place {
-    width: 50%;
+    width: 80%;
     max-width: 900px;
     margin: auto;
 }
@@ -155,12 +162,19 @@ form#new_place {
     padding-bottom: 59px;
 }
 .fas.fa-chevron-down.heading-top {
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1.5);
     transition: 1s;
+    position: absolute;
+    right: 30px;
+    top: 10px;
 }
 .fas.fa-chevron-down.heading-down {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.5);
     transition: 1s;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    transform: scale(1.5);
 }
 .newpostpage.up{
     bottom: 0;

@@ -39,7 +39,8 @@
 
         <p class="formbox_newpost_photo">
           <i class="fas fa-images fa-2x"></i>
-            <%= f.file_field :image %>
+            <%= f.label :写真を追加,for: "postnew_img", class: 'profileimagetext' %>
+            <%= f.file_field :image, id: 'postnew_img', class: 'profileimage' %>
         </p>
       
         <div class="field_newpost">

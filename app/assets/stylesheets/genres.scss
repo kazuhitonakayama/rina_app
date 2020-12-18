@@ -130,7 +130,9 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+
 }
 
 .genrenewselect input#arrow-icon-colorーselector {
