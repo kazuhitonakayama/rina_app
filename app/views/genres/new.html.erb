@@ -1,0 +1,43 @@
+<div class="addgenrearea">
+  <div class="addgenre_textarea">リスト追加</div> 
+</div>
+
+<div class="genre_new">
+  <div class="newgenrearea">
+    <%= form_for @genre do |g| %>
+    　<div class="genrenamebox">
+        <%= g.text_field :name,placeholder: "リスト名",class: 'formbox_genre' %>
+      </div>
+
+    　<div class="genrenewselect">
+        <i class="fas fa-location-arrow fa-rotate-90" style="transform: translate(13px,-11px) rotate(135deg); "id="arrow-icon"></i>
+        <input type="color" class="arrow-icon-color-selector" id="arrow-icon-colorーselector" name="genre[color]" value="#e66465" >
+      </div>
+
+      <div class="newgenre_btnarea">
+        <%= g.submit "追加",class: 'newgenre_btn' %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="genreallbox_new">
+    <% @genres.each do |g| %>
+      <div class="genrename_box_new">
+          <i class="fas fa-location-arrow fa-2x fa-rotate-90" style="color: <%= g.color %>; transform: translate(13px,-11px) rotate(135deg); "></i>
+          <p class="indexgenrename_new">
+            <%= g.name %>
+          </p>
+        </div>      
+    <% end %>
+  </div>
+</div>
+
+<script>
+  const colorpicker = document.querySelector('.arrow-icon-color-selector');
+  const arrowicon = document.getElementById('arrow-icon');
+
+  colorpicker.addEventListener('input', function(e) {  // カラーピッカーの入力値(inputの値)が変更されたら{}内の処理を実行する
+    arrowicon.style.color = e.target.value; // アイコンのCSSのcolorプロパティの値を右辺の値にする。右辺の値とはすなわち、カラーピッカーでの選択値である。
+ });
+</script>

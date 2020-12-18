@@ -1,0 +1,168 @@
+
+
+  <div>
+    <input id="pac-input" class="controls" type="text" placeholder="Enter a location"/>
+  </div>
+
+  <div id="map"></div>
+  <div id="infowindow-content">
+      <span id="place-name"></span><i class="fas fa-arrow-circle-down" id="get_place_name"></i>
+      <span id="place-address"></span>
+  </div>
+
+
+
+  <div class="newpostpage" id="index-infomation-area">
+    <i class="fas fa-chevron-down heading-top" id="infoarea-close"></i>
+
+    <div class="newpostarea">
+      <div class="newpost_textarea">新規投稿</div> 
+    </div> 
+
+    <div class="newpostcontent">
+      <%= form_for @place do |f| %>
+
+        <div class="field_newpost">
+          <%= f.text_field :name,id: "target",placeholder: "スポット名",class: 'formbox_newpost' %>
+        </div>
+
+        <div class="field_newpost">
+          <%= f.date_field :day,class: 'formbox_newpost' %>
+        </div>
+
+        <div class="field_newpost">
+          <% if user_signed_in? %>
+            <%= f.select :genre_id, Genre.where(user_id: current_user.id).or(Genre.where(user_id: 1)).map{|o| [o.name, o.id]}%>
+          <% end %>
+          <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-v fa-rotate-90'), genres_path) %>
+        </div>
+
+        <p class="formbox_newpost_photo">
+          <i class="fas fa-images fa-2x"></i>
+            <%= f.file_field :image %>
+        </p>
+      
+        <div class="field_newpost">
+            <%= f.text_field :comment,placeholder: "コメント",class: 'formbox_newpost' %>
+        </div>
+
+        <div class="field stararea">
+          <input class="star-radio" id="post_rate1" type="radio" name="place[rate]" value="5" />
+          <label for="post_rate1"><span class="text"></span><br><span class="star">★</span></label>
+          <input class="star-radio"  id="post_rate2" type="radio" name="place[rate]" value="4" />
+          <label for="post_rate2"><span class="text"></span><br><span class="star">★</span></label>
+          <input class="star-radio"  id="post_rate3" type="radio" name="place[rate]" value="3" />
+          <label for="post_rate3"><span class="text"></span><br><span class="star">★</span></label>
+          <input class="star-radio"  id="post_rate4" type="radio" name="place[rate]" value="2" />
+          <label for="post_rate4"><span class="text"></span><br><span class="star">★</span></label>
+          <input class="star-radio"  id="post_rate5" type="radio" name="place[rate]" value="1" />
+          <label for="post_rate5"><span class="text"></span><br><span class="star">★</span></label>
+        </div>
+        
+        <div class="field_newpost">
+          <p>公開非公開</p>
+          <%= radio_button_tag("place[public_state]", "false") %>
+          <%= label_tag("public_state_radio_1", "公開") %><br>
+          <%= radio_button_tag("place[public_state]", "true") %>
+          <%= label_tag("public_state_radio_2", "非公開") %><br>
+        </div>
+
+        <div class="newpost_btnarea">
+      　  <%= f.submit "投稿する",class: 'newpost_btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+<script>
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 35.0116, lng: 135.7681 },
+    zoom: 13,
+  });
+  const input = document.getElementById("pac-input");
+  const autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo("bounds", map);
+  // Specify just the place data fields that you need.
+  autocomplete.setFields(["place_id", "geometry", "name"]);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  const infowindow = new google.maps.InfoWindow();
+  const infowindowContent = document.getElementById("infowindow-content");
+
+  // 矢印の実装
+  const get_place_name_arrow = document.getElementById("get_place_name");
+
+  infowindow.setContent(infowindowContent);
+  const marker = new google.maps.Marker({ map: map });
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+    get_place_name_arrow.classList.add("display");
+  });
+  autocomplete.addListener("place_changed", () => {
+    infowindow.close();
+    const place = autocomplete.getPlace();
+
+    if (!place.geometry) {
+      return;
+    }
+
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+    // Set the position of the marker using the place ID and location.
+    marker.setPlace({
+      placeId: place.place_id,
+      location: place.geometry.location,
+    });
+    marker.setVisible(true);
+    infowindowContent.children.namedItem("place-name").textContent = place.name;
+    infowindowContent.children.namedItem("place-id").textContent =
+      place.place_id;
+    infowindowContent.children.namedItem("place-address").textContent =
+      place.formatted_address;
+    infowindow.open(map, marker);
+  });
+}
+
+
+// infoウィンドウのクローズボタン実装
+var infoareaclose = document.getElementById('infoarea-close'); // 矢印アイコンinfoareaのcloseボタンのDOM定義
+let target = document.getElementById('index-infomation-area'); // 新規投稿infoareaのウィンドウの定義
+
+infoareaclose.addEventListener('click',function(){
+    if (infoareaclose.className === 'fas fa-chevron-down heading-top'){ //もし矢印が上向いてたら
+      infoareaclose.className = 'fas fa-chevron-down heading-down';     // 矢印を下向かせる
+      target.classList.add('up');                                       // newpostpageのクラスにupを追加 
+    } else {                                                            // もし矢印が下向いてたら
+      infoareaclose.className = 'fas fa-chevron-down heading-top';       // 矢印を上向かせる
+      target.classList.remove('up');                                     // newpostpageのクラスにupを削除
+    }
+});
+</script>
+
+<script>
+  (function(){
+      'use strict';
+
+      //jsの中でも、「classを付けたり外したりする機能」について話します
+
+      // showっていう名前がついてる要素を取得してshowっていう変数に入れる
+      var get_place_name = document.getElementById('get_place_name');
+
+      //ここ
+      //showをクリックしたらbodyのクラス名にmenu-openを追加する
+      get_place_name.addEventListener('click' , function(){　//showがクリックされた時に{}の処理を実行します
+          const placename = document.getElementById("place-name");  
+
+          const target = document.getElementById("target");
+          target.value = placename.textContent
+      });
+
+  })();
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyA9yp6zF2P9BMRMMnXzOSE9KfajGbKf7i4&libraries=geometry,places&callback=initMap"></script>

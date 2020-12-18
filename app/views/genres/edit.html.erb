@@ -1,0 +1,23 @@
+<div class="editgenrearea">
+  <div class="editgenre_textarea">リスト編集</div> 
+</div>
+
+
+<div class="largeeditgenre">
+<div class="editgenre_area"> 
+  <%= form_for @genre do |g| %>
+  　<div class="genrenameeditbox">
+      <%= g.text_field :name,class: 'formboxedit_genre'  %>
+    </div>
+
+  　<div class="genreeditselect">
+      <i class="fas fa-location-arrow fa-rotate-90" style="transform: translate(13px,-11px) rotate(135deg); "id="arrow-icon"></i>
+      <input type="color" class="arrow-icon-color-selector" id="arrow-icon-colorーselector" name="genre[color]" value="<%= @genre.color %>" >
+    </div>
+
+    <div class="editgenre_btnarea">
+      <%= g.submit "編集",class: 'editgenre_btn' %>
+    </div> 
+  <% end %>
+</div>
+</div>

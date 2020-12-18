@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: noto-sans-cjk-jp,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ p, div  {
+     margin: 0;
+ }
+
+
+ 
+ .box{
+     width: 100%;
+     height: 10px;
+     color: #ffd252;
+     background-color: #ffd252;
+     z-index: 2;
+     position: relative;
+     top: 0;
+ }
+.allicon{
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    padding: 13px 0px;
+    background: #fff;
+    z-index: 4;
+    box-shadow: rgba(233, 233, 233, 0.25) 20px -12px 8px 0px, rgba(163, 163, 163, 0.25) 1px 2px 6px 0px;
+}
+
+ .fa-sign-out-alt:before {
+    content: "\f2f5";
+    color: #B0AFAF;
+    margin: 20px;
+}
+
+.allicon .fa-plus:before {
+    content: "\f067";
+    color: #B0AFAF;
+    margin: 20px;
+}
+
+.fa-search:before {
+    content: "\f002";
+    color: #B0AFAF;
+    margin: 20px;
+}
+
+i.fas.fa-bookmark.fa-2x:before {
+    content: "\f02e";
+    color: #B0AFAF;
+    margin: 20px;
+}
+
+
+.usericon_userindex.at_application {
+    border-radius: 90px 90px 90px 90px;
+    margin-left: 16px;
+    margin-top: -20px;
+}
+
+i.fas.fa-user-circle.fa-2x.at_application {
+    margin-left: 14px;
+}
+
+.genreheading{
+    display: flex;
+}
+
+.genrename{
+    margin-left: 20px;
+    font-size: 27px;
+}
+
+
+/* map arrowの実装 */
+i#get_place_name {
+    display: none;
+}
+i#get_place_name.display {
+    display: block;
+}
+
+
+@media screen and (max-width: 500px ) {
+    .allicon {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    a.allicon_icons {
+        width: 64px;
+    }
+}

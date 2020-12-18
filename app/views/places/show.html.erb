@@ -1,0 +1,194 @@
+ 
+<div class="placeimgbox_show">
+  <% if @place.image.present? %>
+    <%= image_tag @place.image_url, class: 'placeimg_show' %>
+    <%= image_tag "backblack.png",class: 'backblack' %>
+  <% else %>
+    <%= image_tag "noimage.png",class: 'postnoimage_show' %>
+    <%= image_tag "backblack.png",class: 'backblack' %>
+  <% end %>
+  <div class="placename_index">
+    <%= @place.name %>
+  </div>  
+</div>
+
+<div class="placeshowlagebox">
+  <div class="fiveicons">
+    <div class="threeshareicon"> 
+      <i class="fas fa-paperclip fa-2x" id="js-copy"></i>
+      <script>
+        @url = location.href
+      </script>
+      <%# 以下2行でLINEアイコンの実装 %>
+        <div class="line-it-button" data-lang="ja" data-type="share-b" data-ver="3" data-url="<%= @url %>" data-color="grey" data-size="small" data-count="false" style="display: none;"></div>
+        <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      <%= link_to(content_tag(:i, '', class: 'fab fa-twitter fa-2x'), "https://twitter.com/share?url=#{request.url}", target: '_blank') %>
+    </div>
+
+    <div class="twoicons_index">
+      <% if user_signed_in? %>
+            <% if current_user.already_bookmarked?(@place) %>
+                <%= link_to place_bookmark_path(@place), method: :delete do %>
+                  <i class="fas fa-bookmark fa-2x at_place_show"></i>
+                <% end %>
+            <% else %>
+                <%= link_to place_bookmarks_path(@place), method: :post do %>
+                  <i class="far fa-bookmark fa-2x at_place_show"></i>
+                <% end %>
+            <% end %>
+      <% end %>
+
+      <% if user_signed_in? %>
+            <% if current_user.already_liked?(@place) %>
+                <%= link_to place_like_path(@place), method: :delete do %>
+                  <i class="fas fa-heart fa-2x at_place_show_top"></i>
+                <% end %>
+            <% else %>
+                <%= link_to place_likes_path(@place), method: :post do %>
+                  <i class="far fa-heart fa-2x at_place_show_top"></i>
+                <% end %>
+            <% end %>
+      <% else %>
+            <i class="far fa-heart fa-2x"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="clip_target" style="opacity: 0; width: 0px; height: 0px; overflow:hidden; margin-top: 20px;border: 2px dashed;padding: 10px"></div>
+
+  <% p=@place %>
+
+  <div class="usericonarea_show">
+    <% if User.find(p.user_id).image.present? %>
+      <%= image_tag User.find(p.user_id).image_url, size: "35x35",class: 'usericon_userindex' %>
+    <% else %>
+      <i class="fas fa-user-circle fa-3x" style="color:#B0AFAF"></i>
+    <% end %>
+
+    <div class="usernamebox_index">
+      <%= User.find(p.user_id).name %>
+      <p class="postcount">投稿：<%= Place.where(user_id: p.user_id).count %>件</p>
+    </div>
+    
+  </div>  
+
+  <div id="map_show"></div>
+
+  <div class="postinfo">  
+    <div class="postinfo_show1">
+      <p class="placename_show"><%= @place.day %></p>
+      <div class="ratestar_show">
+        <% if p.rate.present? %>
+            <%  p.rate.times do %>
+                <i class="fas fa-star"></i>
+            <% end %>
+            <%  (5-p.rate).times do %>
+                <i class="far fa-star"></i>
+            <% end %>
+        <% end %>
+      </div> 
+    </div> 
+
+    <div class="postinfo_show2">
+      <% @genre = Genre.find(@place.genre_id) %>
+        <i class="fas fa-location-arrow  fa-rotate-90" style="color: <%= @genre.color %>; height: fit-content; transform: translate(-3px,6px) rotate(135deg); "></i>
+          <div class="genrenamebox_show">
+            <p class="genrename_show">
+            <%= @genre.name %>
+            </p>
+            <p class="postadress">
+              <% result = JSON.parse(Geocoder.search(@place.name).to_json) %>
+              <%= result[0]['data']['formatted_address'] %>
+            </p>
+          </div>   
+    </div>       
+        
+    <div class="postinfo_show3">
+      <%= @place.comment %>   
+    </div>
+
+    <div class="heartuserarea">
+      <i class="fas fa-heart  at_place_show_under"></i>
+      <div class="heartuser">いいねしたユーザー</div>
+    </div>
+
+    <div class="heartuserbox">
+      <% @place.liked_users.each do |user| %>
+        <div class="usericonarea_place_show">
+          <% if user.image.present? %>
+            <%= image_tag user.image_url, size: "47x47",class: 'usericon_placeshow' %>
+          <% else %>
+            <i class="fas fa-user-circle fa-3x" style="color:#B0AFAF"></i>
+          <% end %>
+          <div class="usernamebox_index">
+            <%= user.name %>
+            <p class="postcount">投稿：<%= Place.where(user_id: user.id).count %>件</p>
+          </div>
+        </div>  
+      <% end %>
+    </div>  
+  </div> 
+</div> 
+
+
+
+
+<script>
+<% results=Geocoder.search(@place.name) %>
+<% @latlng=results.first.coordinates %>
+function initMap(){
+  map = new google.maps.Map(document.getElementById('map_show'), {
+    center: {lat: <%= @latlng[0] %>, lng: <%= @latlng[1] %>},
+    zoom: 6,
+  });
+            <% if results.present? %>
+                (function(){
+                    var contentString = 'アドレス：<%= link_to @place.name %>'; 
+                    var infowindow = new google.maps.InfoWindow({
+                        position:{lat: <%= @latlng[0] %>, lng: <%= @latlng[1] %>},
+                        content: contentString
+                    });
+                    var marker = new google.maps.Marker({
+                        position:{lat: <%= @latlng[0] %>, lng: <%= @latlng[1] %>},
+                        map: map,
+                        icon: {
+                            fillColor: "<%= @place.genre.color %>",                //塗り潰し色
+                            fillOpacity: 0.8,                    //塗り潰し透過率
+                            path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, //円を指定
+                            scale: 6,                           //円のサイズ
+                            strokeColor: "<%= @place.genre.color %>",              //枠の色
+                            strokeWeight: 1.0                    //枠の透過率
+                        },
+                        title: contentString
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                    })();
+            <% end %>
+    }
+
+// TODO: コピーリンクの作成
+        // コピーボタン
+        const btn_copy = document.querySelector('#js-copy');
+        // コピー対象となるテキスト
+        const copy_target = document.querySelector('#clip_target');
+
+        // コピーボタンのクリックイベント
+        btn_copy.addEventListener('click', () => {
+          copy_target.textContent = location.href; 
+          copyText(copy_target);
+          window.alert("クリップボードにコピーしたよ！友達に共有してみてね！");
+        });
+
+        const copyText = (target) => {
+          // テキストの選択
+          document.getSelection().selectAllChildren(target);
+          // 選択範囲のコピー
+          document.execCommand("copy");
+          // テキスト選択の解除
+          document.getSelection().empty(target);
+        }
+
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyA9yp6zF2P9BMRMMnXzOSE9KfajGbKf7i4&libraries=geometry,places&callback=initMap"></script>

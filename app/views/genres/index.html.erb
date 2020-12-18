@@ -1,0 +1,27 @@
+<div class="indexgenrearea">
+  <div class="indexgenre_textarea">リスト一覧</div> 
+</div>
+
+<div class="indexgenre_info">
+    <div class="addlistlinkarea">
+        <%= link_to "＋リスト追加", new_genre_path, class: "addlistlink" %>
+    </div>
+
+    <div class="genreboxlarge">
+        <div class="genreallbox">
+            <% @genres.each do |g| %>
+                <div class="genrename_box">
+                    <i class="fas fa-location-arrow fa-2x fa-rotate-90" style="color: <%= g.color %>; transform: translate(13px,-11px) rotate(135deg); "></i>
+                    <p class="indexgenrename">
+                        <%= g.name %>
+                    </p>
+                    <div class="genreicons">
+                        <%= link_to(content_tag(:i, '', class: 'fas fa-edit'),edit_genre_path(g.id) ) %>
+                        <%= link_to(content_tag(:i, '', class: 'fas fa-plus'),genre_path(g.id), method: :delete ) %>
+                    </div>
+                </div>      
+            <% end %>
+        
+        </div>
+    </div>
+</div>    

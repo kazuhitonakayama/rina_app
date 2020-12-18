@@ -1,0 +1,784 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ログインページのスタイル
+.login-container {
+    overflow: scroll;
+    height: 100vh;
+}
+
+lottie-player {
+    position: absolute;
+    top: 3%;
+    left: 20%;
+    transform: scale(1.5);
+}
+
+.login-upper-pc-image{
+    display: block;
+    width: 100%;
+}
+
+.login-upper-sp-image{
+    display: none;
+}
+
+
+.login-background-fluidshape{
+    height: 100vh;
+    background-color: #FFD252;
+    z-index:3;
+}
+
+.login-backgroundbox{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    height: 45%;
+    background-color: #FFD252;
+    z-index: 2;
+    margin-top: 160px;
+}
+img.login-bottom-wave {
+    left: 0;
+    position: absolute;
+    top: -95px;
+    transform: scale(1.9);
+}
+
+.login-form{
+    text-align: center;
+    z-index: 4;
+    padding-bottom: 59px;
+}
+
+.login{
+    position: relative;
+    font-size: 18px;
+    line-height: 14px;
+    margin:7px;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    z-index: 4;
+}
+
+.login-formarea {
+    z-index: 5;
+    position: relative;
+}
+
+.signup_link {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    z-index: 4;
+}
+
+.foget_your_password{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    z-index: 4;
+}
+
+img.login_letter {
+    position: relative;
+}
+.login-wave-bg {
+    width: 100%;
+    height: 100px;
+}
+.custom-shape-divider-bottom-1608268418 {
+    position: absolute;
+    bottom: 27vh;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1608268418 svg {
+    position: relative;
+    display: block;
+    width: calc(174% + 1.3px);
+    height: 338px;
+}
+
+.custom-shape-divider-bottom-1608268418 .shape-fill {
+    fill: #FFD252;
+}
+
+.custom-shape-divider-bottom-1608268821 {
+    display: none;
+}
+
+.custom-shape-divider-bottom-1608270498 {
+    display: none;
+}
+
+.login_btn {
+    color: #ffd252;
+    background-color: #ffffff;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: none;
+    position: relative;
+    margin: 30px;
+    z-index: 2;
+}
+
+.login_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+.signup_link{
+    color: #ffffff;
+    left: -95px;
+    font-style: normal;
+}
+
+.signup_link:hover{
+    color: #f76b07;
+}
+
+.singup_path{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+// サインアップページのスタイル
+.login-upper-area-container{
+    display: block;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.signupform-area{
+    text-align: center;
+    width: 100%;
+}
+
+.form {
+    margin: 15px;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.formbox{
+    border-radius: 7px 7px 7px 7px;
+    border: 1px solid #B0AFAF;
+    height: 40px;
+    padding-left: 10px;
+    width: 270px;
+    margin-top: 20px;
+}
+
+.registeractions{
+    width: 100%;
+}
+
+.register_btn{
+    color: #fff;
+    background-color: #FFD252;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: 1px solid #646464;
+    left: 10%;
+    position: relative;
+    margin: 20px;
+    z-index: 2;
+}
+
+.register_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+
+img.signup-bottom-wave {
+    left: 0;
+    position: absolute;
+    top: 850px;
+    transform: scale(1.9);
+}
+
+a.login_at_signup {
+    position: relative;
+    z-index: 10;
+}
+
+
+// ユーザーマイページ
+div#map {
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+}
+
+.mypagepost{
+    bottom: 0%;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    height: 60vh;
+    overflow: scroll;
+    padding-bottom: 34px;
+}
+
+.mypagepost::-webkit-scrollbar {
+    display: none;
+}
+
+.profileicon{
+    height: 40px;
+    width: 90px;
+    z-index: 5;
+}
+
+.usericonarea {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+
+.usericon_mypage{
+    border-radius: 90px 90px 90px 90px;
+    margin-left: 20px;
+}
+
+.username {
+    left: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.twoicons_mypage{
+    padding-top: 7px;
+}
+
+.fa-user-edit:before {
+    color: #B0AFAF;
+    margin-left: 40px; 
+
+}
+
+.fa-sign-out-alt:before {
+    content: "\f2f5";
+    color: #B0AFAF;
+    margin-left: 30px;
+}
+
+.place-content{
+    display: inline-flex;
+    overflow: scroll;
+}
+
+.place-content::-webkit-scrollbar {
+    display: none;
+}
+.postcard_mypage{
+    padding: 5px;
+    width: 200px;
+    height: 260px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    padding-right: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.postnoimage{
+    width: 190px;
+    height: 130px;
+}
+
+.bookmarkarea_post{
+    width: 100%;
+    text-align: right;
+}
+
+
+i.fas.fa-bookmark:before {
+    content: "\f02e";
+    color: #44D480;
+    
+}
+
+i.far.fa-bookmark{
+    margin-left: 80%;
+}
+
+.fa-bookmark:before {
+    content: "\f02e";
+    color: #808080;
+}
+
+.usericonarea_post{
+    display: flex;
+    padding-right: 10px;
+}
+
+.username_post{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.usericon_mypage_post{
+    border-radius: 90px 90px 90px 90px;
+}
+
+.imgarea_post{
+    width: 100%;
+}
+
+.img_post{
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 15px;
+    width: 100%;
+    max-height: 130px;
+}
+
+.name_post{
+    font-size: 18px;
+    margin-top: 10px;
+    max-height: 26px;
+    overflow: hidden;
+}
+
+.threeicons_post{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+i.fas.fa-ellipsis-h {
+    color: #B0AFAF;
+}
+
+i.fas.fa-star {
+    color: #FFD252 !important; 
+}
+
+i.far.fa-star {
+    color: #B0AFAF;
+}
+
+.ratestar_post{
+    position: relative;
+}
+
+i.far.fa-heart {
+    color: #FC3232;
+}
+
+
+i.fas.fa-heart {
+    color: #fc3232;
+}
+.likecounts{
+    color: #FC3232;
+}
+
+.modal-backdrop{
+    z-index: 3 !important;
+}
+
+/* 上げ下げの実装 */
+.mypagepost{
+    bottom: -38vh;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    height: 60vh;
+    overflow: scroll;
+    transition: 1s;
+}
+.fas.fa-chevron-down.heading-top {
+    transform: rotate(180deg);
+    transition: 1s;
+}
+.fas.fa-chevron-down.heading-down {
+    transform: rotate(0deg);
+    transition: 1s;
+}
+.mypagepost.up{
+    bottom: 0;
+    transition: 1s;
+}
+
+//i#infoarea-close {
+    /* left: 50px; */
+    //position: absolute;
+    //right: 30px;
+    //margin-top: 20px;
+//}
+// プロフィール編集ページのスタイル
+.editprofilearea{
+    width: 60%;
+    height:35px;
+    background-color: #ffd252;
+    margin-top: 70px;
+}
+
+.editprofile_textarea{
+    color: #ffffff;
+    font-size: 25px;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.editprofile_largebox{
+    margin-top: 30px;
+    text-align: center
+}
+
+.editprofile_btn{
+    color: #fff;
+    background-color: #FFD252;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: 1px solid #646464;
+    left: 10%;
+    position: relative;
+    margin: 20px;
+    z-index: 2;
+}
+
+.editprofile_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+input#user_image {
+    display: none;
+}
+
+img#avatar_img_prev {
+    width: 130px;
+    height: 130px;
+    border-radius: 90px;
+}
+
+.avatar-imagearea{
+    width: 100%;
+    height: 140px;
+    z-index: 3;
+}
+
+.profileimage{
+    display: none;
+}
+
+img {
+    border-style:none;
+}
+
+.usercurrenticon{
+    border-radius: 90px;
+}
+
+.hidden_img{
+    display: none;
+}
+
+// ユーザー一覧ページのスタイル
+input#search {
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #646464;
+}
+
+.usersearcharea {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.usersearchbox{
+    padding-left: 10px;
+}
+.usersearch_btn{
+    color: #646464;
+    height: 50px;
+    width: 60px;
+    border-radius: 90px;
+    border: 1px solid #646464;
+    left: 10%;
+    z-index: 2;
+}
+
+
+.usericon_area {
+    position: relative;
+    max-height: 300px;
+    max-width: 380px;
+    margin: 20px auto;
+}
+
+.usericon_area::-webkit-scrollbar {
+    display: none;
+}
+
+.usericon_userindex{
+    border-radius: 90px 90px 90px 90px;
+}
+
+.eachuser {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+
+a.username_index {
+    color: #646464;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.postcount{
+    color:#B0AFAF;
+    font-size: 11px;
+}
+
+.usernamebox_index {
+    margin-left: 15px;
+}
+
+hr.style10 {
+	border-top: 1px dotted #ffd252;
+    border-bottom: 1px dotted #fff;
+    margin-top: 50px;
+}
+
+h2.popular_post {
+    margin-left: 30px;
+    font-weight: bold;
+    position: relative;
+}
+h2.popular_post::before {
+    display: inline-block;
+    content: 'Popular';
+    font-size: 19px;
+    color: #ffd252;
+    position: absolute;
+    top: -21px;
+    font-weight: bold;
+    /* font: small-caption; */
+    z-index: -1;
+}
+
+.popularpostarea {
+    margin-top: 50px;  
+}
+
+.popularpostbox{
+    display: inline-flex;
+    margin-top: 20px;
+    overflow: scroll;
+    width: 100%;
+}
+
+.postcard_index{
+    padding: 5px;
+    min-width: 200px;
+    max-width: 200px;
+    height: 280px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    padding-right: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+// ブックマークページのスタイル
+.bookmark_topbanner{
+    margin-top: 40px;
+}
+
+img.bookmark-banner1 {
+    display: block;
+    margin: auto;
+}
+
+.bookmarkarea{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+    margin-top: 50px;  
+}
+
+
+.postcard_bookmark{
+    padding: 5px;
+    max-width: 200px;
+    width: 100%;
+    height: 280px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    padding-right: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+
+// ユーザーページのスタイル
+.postcard_show{
+    padding: 5px;
+    width: px;
+    height: 280px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    padding-right: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 768px ) {
+    lottie-player {
+        position: absolute;
+        top: 4%;
+        left: -16%;
+        transform: scale(1.2);
+    }
+    
+    .login-upper-pc-image{
+        display: none;
+    }
+
+    .login-upper-sp-image{
+        display: block;
+    }
+
+    input#search {
+        width: 180px;
+    }
+
+    .usericon_area {
+        max-width: 260px;
+    }
+
+    
+    .custom-shape-divider-bottom-1608268821 {
+        display: block;
+        position: absolute;
+        bottom: 255px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .custom-shape-divider-bottom-1608268821 svg {
+        position: relative;
+        display: block;
+        width: calc(174% + 1.3px);
+        height: 338px;
+    }
+    
+    .custom-shape-divider-bottom-1608268821 .shape-fill {
+        fill: #FFD252;
+    }
+    
+    
+    .custom-shape-divider-bottom-1608268418 {
+        display: none;
+    }
+
+    .custom-shape-divider-bottom-1608270498 {
+        display: none;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 500px ) {
+    .login-upper-sentencearea {
+        transform: translate(-148px, 35px);
+    }
+    
+    .allicon {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .custom-shape-divider-bottom-1608270498 {
+        position: absolute;
+        display: block;
+        bottom: 44vh;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .custom-shape-divider-bottom-1608270498 svg {
+        position: relative;
+        display: block;
+        width: calc(174% + 1.3px);
+        height: 338px;
+        transform: rotateY(180deg);
+    }
+    
+    .custom-shape-divider-bottom-1608270498 .shape-fill {
+        fill: #FFD252;
+    }
+    
+    /** For tablet devices **/
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .custom-shape-divider-bottom-1608270498 svg {
+            width: calc(195% + 1.3px);
+            height: 225px;
+        }
+    }
+    
+    /** For mobile devices **/
+    @media (max-width: 767px) {
+        .custom-shape-divider-bottom-1608270498 svg {
+            width: calc(236% + 1.3px);
+            height: 154px;
+        }
+    }
+
+    .custom-shape-divider-bottom-1608268821 {
+        display: none;
+    }
+
+    .custom-shape-divider-bottom-1608268418 {
+        display: none;
+    }
+}

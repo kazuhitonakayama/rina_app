@@ -1,0 +1,413 @@
+// Place all the styles related to the Places controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ★評価のためのCSS
+.stararea {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+input[type='radio'].star-radio {
+    display: none;
+}
+span.star {
+    color: gray;;
+}
+label {
+    text-align: center;
+    margin: 0px 10px;
+}
+input[type='radio'].star-radio:checked ~ label span.star{
+    color: #ffcc00;
+}
+// ★評価のためのCSS fin
+
+
+// 新規投稿ページ　デザイン
+input#pac-input {
+    height: 50px;
+    width: 200px;
+    margin-left: 20%;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+    align-items: center;
+}
+
+
+   
+.gmnoprint {
+    top: 90% !important;
+}
+
+.newpostpage{
+    bottom: 0%;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    height: 60vh;
+    overflow: scroll;
+}
+
+.newpostpage::-webkit-scrollbar {
+    display: none;
+}
+.newpostarea{
+    width: 60%;
+    height:35px;
+    background-color: #ffd252;
+    margin-top: 20px;
+}
+
+.newpost_textarea{
+    color: #ffffff;
+    font-size: 25px;
+    align-items: center;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.field_newpost{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.formbox_newpost{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+input#file-upload-bottom{
+    height: 90px;
+}
+
+.formbox_newpost_photo{
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.fa-images:before {
+    color: #B0AFAF;
+    content: "\f302";
+}
+
+.fa-ellipsis-v:before {
+    content: "\f142";
+    color: #44D480;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+select#place_genre_id {
+    width: 60%;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+}
+
+.stararea {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+
+.newpost_btnarea{
+    width: 80%;
+    text-align: right;
+}
+
+
+
+.newpost_btn{
+    color: #fff;
+    background-color: #FFD252;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: 1px solid #646464;
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+form#new_place {
+    width: 50%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* 上げ下げの実装 */
+.newpostpage{
+    bottom: -42vh;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    height: 60vh;
+    overflow: scroll;
+    transition: 1s;
+    padding-bottom: 59px;
+}
+.fas.fa-chevron-down.heading-top {
+    transform: rotate(180deg);
+    transition: 1s;
+}
+.fas.fa-chevron-down.heading-down {
+    transform: rotate(0deg);
+    transition: 1s;
+}
+.newpostpage.up{
+    bottom: 0;
+    transition: 1s;
+    padding-bottom: 59px;
+}
+
+/* end */
+
+.newpost_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+// 投稿編集ページ　デザイン
+.editpostarea{
+    width: 60%;
+    height:35px;
+    background-color: #ffd252;
+    margin-top: 70px;
+}
+
+.editpost_textarea{
+    color: #ffffff;
+    font-size: 25px;
+    align-items: center;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.editpostcontent{
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+.formbox_editpost{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+    height: 40px;
+    width: 80%;
+    padding-left: 10px;
+}
+
+.field_editpost{
+    margin: 15px;  
+}
+
+.genreselect{
+    padding-left: 10px;
+}
+
+.formbox_editpost_photo{
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.editpost_btnarea{
+    width: 80%;
+    text-align: right;
+}
+
+.editpost_btn{
+    color: #fff;
+    background-color: #FFD252;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: 1px solid #646464;
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.editpost_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+select#place_genre_id {
+    width: 60%;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+    padding-left: 10px;
+}
+
+// 投稿詳細ページ　デザイン
+.placeshowlagebox{
+    overflow: scroll;
+    height: 60vh;
+}
+.placeimgbox_show{
+    position: relative;
+
+}
+.placeimg_show{
+    width: 100%;
+    height: 30%;
+    
+}
+
+.backblack{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.placename_index{
+    color: #ffffff;
+    z-index: 3;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.fiveicons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.threeshareicon{
+    width: 135px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.twoicons_index{
+    width: 130px;
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.fa-paperclip:before {
+    content: "\f0c6";
+    color: #808080;
+}
+
+.fa-line:before {
+    content: "\f3c0";
+    color: #808080;
+}
+
+.fa-twitter:before {
+    content: "\f099";
+    color: #808080;
+}
+
+i.fas.fa-heart.fa-2x.at_place_show_top{
+    margin-left: 20px;
+}
+
+i.far.fa-bookmark.fa-2x.at_place_show {
+    margin: 0%;
+    margin-right: 20px;
+}
+
+.usernamebox_show{
+    margin-left: 40px;
+}
+
+.usericonarea_show{
+    display: flex;
+    padding-right: 10px;
+    margin-left: 10%;
+}
+
+.postinfo{
+    width: 80%;
+    margin: auto;
+    margin-top: 9px;
+}
+.postinfo_show1{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.placename_show{
+    color: #646464;
+    font-size: 13px;
+}
+
+#map_show{
+    height: 200px;
+    width: 80%;
+    margin: auto;
+    margin-top: 9px;
+}
+.postinfo_show2 {
+    display: flex;
+}
+
+.genrename_show{
+    color: #646464;
+    font-size: 20px;
+}
+
+.postadress{
+    color: #B0AFAF;
+    font-size: 12px;
+}
+
+.postinfo_show3 {
+    margin-top: 15px;
+    color: #646464;
+    margin-left: 16px;
+}
+
+.heartuserarea{
+    display: flex;
+    margin-top: 40px;
+}
+
+.heartuser{
+    margin-left: 0px;
+    font-size: 22px;
+    color: #646464;
+}
+i.fas.fa-heart.at_place_show_under{
+    transform: translate(-4px, 8px);
+    z-index: 2;
+}
+
+.usericonarea_place_show{
+    display: flex;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+.heartuserbox{
+    margin-top: 10px;
+    overflow: scroll;
+    height: 40vh;
+}
+
+.usericon_placeshow{
+    border-radius: 90px 90px 90px 90px;
+    padding-left: 1px;
+}
+
+

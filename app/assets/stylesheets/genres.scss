@@ -1,0 +1,242 @@
+// Place all the styles related to the genres controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// リスト一覧ページ　デザイン
+.indexgenrearea{
+    width: 60%;
+    height:35px;
+    background-color: #ffd252;
+    margin-top: 70px;
+}
+
+.indexgenre_textarea{
+    color: #ffffff;
+    font-size: 25px;
+    align-items: center;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.addlistlink{
+    color: #44D480;  
+}
+
+.addlistlinkarea{
+    margin-top: 50px;
+    text-align: right;
+}
+
+.indexgenre_info {
+    width: 80%;
+    margin: auto;
+}
+
+.genrename_box{
+    display: flex;
+}
+
+.indexgenrename{
+    margin-left: 20px;
+}
+
+.fa-edit:before {
+    content: "\f044";
+    color: #B0AFAF;
+    margin-left: 100px;
+}
+
+.genreboxlarge{
+    text-align: center;
+}
+
+.genrename_box {
+    display: flex;
+    justify-content: center;
+}
+
+.genreicons i.fas.fa-plus {
+    transform: rotate(45deg);
+    color: #B0AFAF;
+}
+
+// リスト追加ページ　デザイン
+.addgenrearea{
+    width: 60%;
+    height:35px;
+    background-color: #ffd252;
+    margin-top: 70px;
+}
+
+.addgenre_textarea{
+    color: #ffffff;
+    font-size: 25px;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.formbox_genre{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+    height: 40px;
+    width: 80%;
+    margin-top: 30px
+}
+
+.newgenrearea{
+    padding: 5px;
+    border: 1px solid #B0AFAF;
+    width: 200px;
+    height: 260px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px #B0AFAF ;
+    margin-bottom: 50px;
+}
+
+.newgenre_btnarea{
+    width: 100%;
+    text-align: center;
+}
+
+.newgenre_btn{
+    color: #fff;
+    background-color: #FFD252;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: 1px solid #646464;
+    position: relative;
+    margin-top: 30px;
+    z-index: 2;  
+}
+
+.newgenre_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+.genrename_box_new{
+    display: flex;
+}
+
+.indexgenrename_new{
+    margin-left: 20px;
+}
+
+.genre_new {
+    display: flex;
+    width: 50%;
+    max-width: 900px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.genrenewselect input#arrow-icon-colorーselector {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.genrenewselect {
+    text-align: center;
+}
+
+.genrenewselect .fa-location-arrow:before {
+    content: "\f124";
+    padding-left: 20px;
+}
+
+.genrenamebox{
+    text-align: center;
+}
+
+// リスト編集ページ　デザイン
+.editgenrearea{
+    width: 60%;
+    height:35px;
+    background-color: #ffd252;
+    margin-top: 70px;
+}
+
+.editgenre_textarea{
+    color: #ffffff;
+    font-size: 25px;
+    align-items: center;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.editgenre_area{
+    padding: 5px;
+    border: 1px solid #B0AFAF;
+    width: 200px;
+    height: 260px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px #B0AFAF ;
+    margin-bottom: 50px;
+    margin: auto;
+}
+
+.formboxedit_genre{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #646464;
+    height: 40px;
+    width: 80%;
+    margin-top: 30px
+}
+
+.editgenre_btnarea{
+    width: 100%;
+    text-align: center;
+}
+
+.editgenre_btn{
+    color: #fff;
+    background-color: #FFD252;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    border: 1px solid #646464;
+    position: relative;
+    margin-top: 30px;
+    z-index: 2;  
+}
+
+.editgenre_btn:hover{
+    color: #fff;
+    background: #f76b07;
+}
+
+.genreeditselect input#arrow-icon-colorーselector {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.genreeditselect {
+    text-align: center;
+}
+
+.genreeditselect .fa-location-arrow:before {
+    content: "\f124";
+    padding-left: 20px;
+}
+
+.genrenameeditbox{
+    text-align: center;
+}
+.largeeditgenre{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px ) {
+    .genre_new {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 100px;
+    }
+}

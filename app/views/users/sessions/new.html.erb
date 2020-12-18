@@ -1,0 +1,54 @@
+<div class="login-container">
+  <div class="login-upper-area"><%# ログイン画面上部 %>
+    <div class="login-upper-area-container">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player src="https://assets7.lottiefiles.com/temp/lf20_FYZYCn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+      <%= image_tag "pc-loginbanner.svg",class: 'login-upper-pc-image' %>
+      <%= image_tag "sp-loginbanner.svg",class: 'login-upper-sp-image' %>
+    </div>
+  </div>
+  
+  <div class="login-backgroundbox"><%# ログイン画面下部 %>
+      <div class="custom-shape-divider-bottom-1608268418">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+          </svg>
+      </div>
+      <div class="custom-shape-divider-bottom-1608268821">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+      </div>
+      <div class="custom-shape-divider-bottom-1608270498">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+      </div>
+      <div class="login-form">
+        <%= image_tag "login_letter.png",class: "login_letter" %>
+        <div class="login-formarea">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form_box_login">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email",class: 'formbox' %>
+            </div>
+
+            <div class="form_box_login">
+              <%= f.password_field :password, autocomplete: "current-password",placeholder: "Password",class: 'formbox' %>
+            </div>
+
+            <div class="login_btnarea">
+              <%= f.submit "ログイン",class: 'login_btn' %>
+            </div>
+            
+          <% end %>
+        </div>
+        <div class="singup_path">
+          <%= render "users/shared/links" %>
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>

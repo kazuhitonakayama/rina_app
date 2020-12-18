@@ -1,0 +1,57 @@
+<div class="editpostarea">
+  <div class="editpost_textarea">投稿編集</div> 
+</div> 
+
+<div class="editpostcontent">
+  <%= form_for @place do |f| %>
+  <div class="field_editpost">
+    <%= f.text_field :name,placeholder: "  スポット名",class: 'formbox_editpost' %>
+  </div>
+
+  <div class="field_editpost">
+    <%= f.date_field :day,class: 'formbox_editpost' %>
+  </div>
+
+  <div class="field_editpost">
+    <% if user_signed_in? %>
+      <%= f.select :genre_id, Genre.where(user_id: current_user.id).or(Genre.where(user_id: 1)).map{|o| [o.name, o.id]} %>
+    <% end %>
+    <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-v fa-rotate-90'), genres_path) %>
+  </div>
+
+
+  <p class="formbox_editpost_photo">
+    <i class="fas fa-images fa-2x"></i>
+    <%= f.file_field :image %>
+  </p>
+
+  <div class="field_editpost">
+    <%= f.text_field :comment,placeholder: "  コメント",class: 'formbox_editpost' %>
+  </div>
+
+  <div class="field stararea">
+    <input class="star-radio" id="post_rate1" type="radio" name="place[rate]" value="5" />
+    <label for="post_rate1"><span class="text"></span><br><span class="star">★</span></label>
+    <input class="star-radio" id="post_rate2" type="radio" name="place[rate]" value="4" />
+    <label for="post_rate2"><span class="text"></span><br><span class="star">★</span></label>
+    <input class="star-radio" id="post_rate3" type="radio" name="place[rate]" value="3" />
+    <label for="post_rate3"><span class="text"></span><br><span class="star">★</span></label>
+    <input class="star-radio" id="post_rate4" type="radio" name="place[rate]" value="2" />
+    <label for="post_rate4"><span class="text"></span><br><span class="star">★</span></label>
+    <input class="star-radio" id="post_rate5" type="radio" name="place[rate]" value="1" />
+    <label for="post_rate5"><span class="text"></span><br><span class="star">★</span></label>
+  </div>
+
+  <div class="field_newpost">
+    <p>公開非公開</p>
+    <%= radio_button_tag("place[public_state]", "false") %>
+    <%= label_tag("public_state_radio_1", "公開") %><br>
+    <%= radio_button_tag("place[public_state]", "true") %>
+    <%= label_tag("public_state_radio_2", "非公開") %><br>
+  </div>
+
+  <div class="editpost_btnarea">
+　    <%= f.submit "編集する",class: 'editpost_btn' %>
+  </div>
+  <% end %>
+</div>

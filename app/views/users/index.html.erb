@@ -1,0 +1,114 @@
+
+ <%= form_tag({controller:"users",action:"index"}, method: :get) do %>
+    <div class="usersearcharea">
+        <%= text_field_tag :search,'',class: 'usersearchbox',placeholder: "  ユーザーを検索" %>
+        <%= submit_tag '検索',class: 'usersearch_btn'  %>
+    </div>
+<% end %>
+
+
+
+<% if user_signed_in? %>
+
+    <div class="usericon_area">
+        <% @users.each do |u| %>
+            <div class="eachuser">
+                <% if u.image.present? %>
+                    <%= image_tag u.image_url, size: "50x50",class: 'usericon_userindex' %>
+                <% else %>
+                    <i class="fas fa-user-circle fa-3x" style="color:#B0AFAF"></i>
+                <% end %>
+                <div class="usernamebox_index">
+                        <%= link_to u.name, user_path(u.id),class: 'username_index' %>
+                        <p class="postcount">投稿：<%= Place.where(user_id: u.id).count %>件</p>
+                </div>
+                
+            </div>
+        <% end %>
+    </div>
+
+    <hr class="style10">
+
+    <div class="popularpostarea">
+        <h2 class="popular_post">人気の投稿</h2>
+            <div class="popularpostbox">
+                <% @places.first(7).each do |p| %>
+                            <div class="postcard_index">
+                                <div class="bookmarkarea_post">
+                                    <% if user_signed_in? %>
+                                        <% if current_user.already_bookmarked?(p) %>
+                                            <%= link_to place_bookmark_path(id: p.id, place_id: p.id), method: :delete do %>
+                                                <i class="fas fa-bookmark"></i>
+                                            <% end %>
+                                        <% else %>
+                                            <%= link_to place_bookmarks_path(id: p.id, place_id: p.id), method: :post do %>
+                                                <i class="far fa-bookmark"></i>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+
+                                <div class="usericonarea_post">
+                                    <% if User.find(p.user_id).image.present? %>
+                                        <%= image_tag User.find(p.user_id).image_url, size: "35x35",class: 'usericon_userindex' %>
+                                    <% else %>
+                                        <i class="fas fa-user-circle fa-2x" style="color:#B0AFAF"></i>
+                                    <% end %>
+                                    <p class="username_post">
+                                        <%= User.find(p.user_id).name  %>
+                                    </p>
+                                </div>  
+                                <div class="imgarea_post">
+                                    <% if p.image.present? %>
+                                        <%= image_tag p.image_url, size: "150×200",class: "img_post" if p.image? %>
+                                     <% else %>
+                                        <%= image_tag "noimage.png",class: 'postnoimage' %>
+                                    <% end %>
+                                </div>
+                                <p class="name_post">
+                                    <%= p.name %>
+                                </p>
+
+                                <div class="threeicons_post">
+                                    <div class="ratestar_post">
+                                        <% if p.rate.present? %>
+                                            <%  p.rate.times do %>
+                                                <i class="fas fa-star"></i>
+                                            <% end %>
+                                            <%  (5-p.rate).times do %>
+                                                <i class="far fa-star"></i>
+                                            <% end %>
+                                        <% end %>
+                                    </div>
+
+                                    
+                                    <div class="twoicons_post">
+                                        <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id)) %>
+                                    
+                                        <% if user_signed_in? %>
+                                            <% if current_user.already_liked?(p) %>
+                                                <%= link_to place_like_path(id: p.id, place_id: p.id), method: :delete do %>
+                                                    <i class="fas fa-heart"></i>
+                                                <% end %>
+                                                <b class="likecounts">
+                                                    <%= p.likes.count %>
+                                                </b>
+                                            <% else %>
+                                                <%= link_to place_likes_path(id: p.id, place_id: p.id), method: :post do %>
+                                                    <i class="far fa-heart"></i>
+                                                <% end %>
+                                                <b class="likecounts">
+                                                    <%= p.likes.count %>
+                                                </b>
+                                            <% end %>
+                                        <% else %>
+                                            <i class="far fa-heart"></i><%= p.likes.count %>
+                                        <% end %> 
+                                    </div>     
+                                </div>
+
+                            </div>            
+            <% end %>
+        </div>
+    </div>
+<% end %>
