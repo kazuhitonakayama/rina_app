@@ -75,6 +75,7 @@ i.fas.fa-bookmark.fa-2x:before {
     border-radius: 90px 90px 90px 90px;
     margin-left: 16px;
     margin-top: -20px;
+    margin-bottom: -3px;
 }
 
 i.fas.fa-user-circle.fa-2x.at_application {
@@ -108,5 +109,11 @@ i#get_place_name.display {
 
     a.allicon_icons {
         width: 64px;
+    }
+    .usericon_userindex.at_application {
+        border-radius: 90px 90px 90px 90px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: -3px;
     }
 }
