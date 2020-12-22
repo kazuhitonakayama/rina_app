@@ -10,7 +10,7 @@
             <% if @user.image.present? %>
                 <%= image_tag @user.image_url, size: "30x30",class: 'usericon_userindex' %>
             <% else %>
-                <i class="fas fa-user-circle fa-3x" style="color:#B0AFAF"></i>
+                <i class="fas fa-user-circle fa-2x" style="color:#B0AFAF"></i>
             <% end %>
             <p class="username">
                 <%= @user.name  %>
@@ -34,7 +34,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    本当にログアウトして大丈夫ですか？さみしいなあ
+                                    本当にログアウトして大丈夫ですか？
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">いいえ</button>
@@ -50,101 +50,100 @@
         </div>
 
 
+        <div class="postsetarea">
+            <% @genres.each do |g| %>
+                <div class="genreheading">
+                    <i class="fas fa-location-arrow fa-2x fa-rotate-90" style="color: <%= g.color %>; transform: translate(13px,-11px) rotate(135deg); "></i>
+                    <h1 class="genrename"><%= g.name %></h1>
+                </div>
 
-        <i class="fas fa-user-circle　fa-2x"></i>
-        <% @genres.each do |g| %>
-            <div class="genreheading">
-                <i class="fas fa-location-arrow fa-2x fa-rotate-90" style="color: <%= g.color %>; transform: translate(13px,-11px) rotate(135deg); "></i>
-                <h1 class="genrename"><%= g.name %></h1>
-            </div>
-
-            <div class="place-content"> 
-                <% @places=g.places.where(user_id: current_user.id).order("rate DESC") %>  <%#  @placesの中に、そのgenreに関連する投稿かつログインユーザーが投稿した投稿を表示　%>
-                <% if @places.count > 0 %>
-                    <% @places.each do |p| %>
-                        <div class="postcard_mypage">
-                            <div class="bookmarkarea_post">
-                                <% if user_signed_in? %>
-                                    <% if current_user.already_bookmarked?(p) %>
-                                        <%= link_to place_bookmark_path(id: p.id, place_id: p.id), method: :delete do %>
-                                            <i class="fas fa-bookmark"></i>
-                                        <% end %>
-                                    <% else %>
-                                        <%= link_to place_bookmarks_path(id: p.id, place_id: p.id), method: :post do %>
-                                            <i class="far fa-bookmark"></i>
-                                        <% end %>
-                                    <% end %>
-                                <% end %>
-                            </div>
-
-                            <div class="usericonarea_post">
-                                <% if @user.image.present? %>
-                                    <%= image_tag @user.image_url, size: "35x35",class: 'usericon_userindex' %>
-                                <% else %>
-                                    <i class="fas fa-user-circle fa-2x" style="color:#B0AFAF"></i>
-                                <% end %>
-                                <p class="username_post">
-                                    <%= @user.name  %>
-                                </p>
-                            </div>  
-                            <div class="imgarea_post">
-                                <% if p.image.present? %>
-                                    <%= image_tag p.image_url, size: "150×200",class: "img_post" if p.image? %>
-                                <% else %>
-                                    <%= image_tag "noimage.png",class: 'postnoimage' %>
-                                <% end %>
-                            </div>
-                            <p class="name_post">
-                                <%= p.name %>
-                            </p>
-
-                            <div class="threeicons_post">
-                                <div class="ratestar_post">
-                                    <% if p.rate.present? %>
-                                        <%  p.rate.times do %>
-                                            <i class="fas fa-star"></i>
-                                        <% end %>
-                                        <%  (5-p.rate).times do %>
-                                            <i class="far fa-star"></i>
+                <div class="place-content"> 
+                    <% @places=g.places.where(user_id: current_user.id).order("rate DESC") %>  <%#  @placesの中に、そのgenreに関連する投稿かつログインユーザーが投稿した投稿を表示　%>
+                    <% if @places.count > 0 %>
+                        <% @places.each do |p| %>
+                            <div class="postcard_mypage">
+                                <div class="bookmarkarea_post">
+                                    <% if user_signed_in? %>
+                                        <% if current_user.already_bookmarked?(p) %>
+                                            <%= link_to place_bookmark_path(id: p.id, place_id: p.id), method: :delete do %>
+                                                <i class="fas fa-bookmark"></i>
+                                            <% end %>
+                                        <% else %>
+                                            <%= link_to place_bookmarks_path(id: p.id, place_id: p.id), method: :post do %>
+                                                <i class="far fa-bookmark"></i>
+                                            <% end %>
                                         <% end %>
                                     <% end %>
                                 </div>
 
-                                
-                                <div class="twoicons_post">
-                                     <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id),data: {"turbolinks"=>false}) %>
-                                
-                                    <% if user_signed_in? %>
-                                        <% if current_user.already_liked?(p) %>
-                                            <%= link_to place_like_path(id: p.id, place_id: p.id), method: :delete do %>
-                                                <i class="fas fa-heart"></i>
-                                            <% end %>
-                                            <b class="likecounts">
-                                                <%= p.likes.count %>
-                                            </b>
-                                        <% else %>
-                                            <%= link_to place_likes_path(id: p.id, place_id: p.id), method: :post do %>
-                                                <i class="far fa-heart"></i>
-                                            <% end %>
-                                            <b class="likecounts">
-                                                <%= p.likes.count %>
-                                            </b>
-                                        <% end %>
+                                <div class="usericonarea_post">
+                                    <% if @user.image.present? %>
+                                        <%= image_tag @user.image_url, size: "35x35",class: 'usericon_userindex' %>
                                     <% else %>
-                                        <i class="far fa-heart"></i><%= p.likes.count %>
-                                    <% end %> 
-                                </div>     
-                            </div>
+                                        <i class="fas fa-user-circle fa-2x" style="color:#B0AFAF"></i>
+                                    <% end %>
+                                    <p class="username_post">
+                                        <%= @user.name  %>
+                                    </p>
+                                </div>  
+                                <div class="imgarea_post">
+                                    <% if p.image.present? %>
+                                        <%= image_tag p.image_url, size: "150×200",class: "img_post" if p.image? %>
+                                    <% else %>
+                                        <%= image_tag "noimage.png",class: 'postnoimage' %>
+                                    <% end %>
+                                </div>
+                                <p class="name_post">
+                                    <%= p.name %>
+                                </p>
 
-                        </div>            
-                    
+                                <div class="threeicons_post">
+                                    <div class="ratestar_post">
+                                        <% if p.rate.present? %>
+                                            <%  p.rate.times do %>
+                                                <i class="fas fa-star"></i>
+                                            <% end %>
+                                            <%  (5-p.rate).times do %>
+                                                <i class="far fa-star"></i>
+                                            <% end %>
+                                        <% end %>
+                                    </div>
+
+                                    
+                                    <div class="twoicons_post">
+                                        <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id),data: {"turbolinks"=>false}) %>
+                                    
+                                        <% if user_signed_in? %>
+                                            <% if current_user.already_liked?(p) %>
+                                                <%= link_to place_like_path(id: p.id, place_id: p.id), method: :delete do %>
+                                                    <i class="fas fa-heart"></i>
+                                                <% end %>
+                                                <b class="likecounts">
+                                                    <%= p.likes.count %>
+                                                </b>
+                                            <% else %>
+                                                <%= link_to place_likes_path(id: p.id, place_id: p.id), method: :post do %>
+                                                    <i class="far fa-heart"></i>
+                                                <% end %>
+                                                <b class="likecounts">
+                                                    <%= p.likes.count %>
+                                                </b>
+                                            <% end %>
+                                        <% else %>
+                                            <i class="far fa-heart"></i><%= p.likes.count %>
+                                        <% end %> 
+                                    </div>     
+                                </div>
+
+                            </div>            
+                        
+                        <% end %>
+                    <% else %>
+                        <p class="nil-message">投稿まってます！</p> 
                     <% end %>
-                <% else %>
-                    <p class="nil-message">投稿まってます！</p> 
-                <% end %>
-            </div>
-           
-        <% end %>
+                </div>
+            <% end %>    
+        </div>       
     </div>
  
     

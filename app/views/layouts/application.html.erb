@@ -32,20 +32,22 @@
     </div>
 
     <%= yield %>
-      <div class="allicon">
-        <%= link_to(content_tag(:i, '', class: 'fas fa-plus fa-2x'), new_place_path,class: "allicon_icons",data: {"turbolinks"=>false}) %>
-        <%= link_to(content_tag(:i, '', class: 'fas fa-bookmark fa-2x'),  users_bookmark_path,class: "allicon_icons",data: {"turbolinks"=>false}) %>
-        <%= link_to(content_tag(:i, '', class: 'fas fa-search fa-2x'), users_path,class: "allicon_icons",data: {"turbolinks"=>false}) %>
-        <% if user_signed_in? %>
-          <%= link_to(root_path,class: "allicon_icons",data: {"turbolinks"=>false}) do  %>
-            <% if User.find(current_user.id).image.present? %>
-                <%= image_tag User.find(current_user.id).image_url, size: "30x30",class: 'usericon_userindex at_application' %>
-            <% else %>
-                <i class="fas fa-user-circle fa-2x at_application" style="color:#B0AFAF"></i>
+      <% if user_signed_in? %>
+        <div class="allicon">
+          <%= link_to(content_tag(:i, '', class: 'fas fa-plus fa-2x'), new_place_path,class: "allicon_icons",data: {"turbolinks"=>false}) %>
+          <%= link_to(content_tag(:i, '', class: 'fas fa-bookmark fa-2x'),  users_bookmark_path,class: "allicon_icons",data: {"turbolinks"=>false}) %>
+          <%= link_to(content_tag(:i, '', class: 'fas fa-search fa-2x'), users_path,class: "allicon_icons",data: {"turbolinks"=>false}) %>
+          <% if user_signed_in? %>
+            <%= link_to(root_path,class: "allicon_icons",data: {"turbolinks"=>false}) do  %>
+              <% if User.find(current_user.id).image.present? %>
+                  <%= image_tag User.find(current_user.id).image_url, size: "30x30",class: 'usericon_userindex at_application' %>
+              <% else %>
+                  <i class="fas fa-user-circle fa-2x at_application" style="color:#B0AFAF"></i>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
     <%# js Mapの読み込み %>
     <script>

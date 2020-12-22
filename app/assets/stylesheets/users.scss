@@ -41,7 +41,7 @@ lottie-player {
     height: 45%;
     background-color: #FFD252;
     z-index: 2;
-    margin-top: 160px;
+    margin-top: 200px;
 }
 img.login-bottom-wave {
     left: 0;
@@ -158,6 +158,22 @@ img.login_letter {
     width: 100%;
 }
 
+.signuparea {
+    width: 270px;
+    margin: auto;
+}
+
+i.fas.fa-caret-right.at_login {
+    display: flex;
+    color: #ffffff;
+}
+
+.fa-caret-right:before {
+    content: "\f0da";
+    position: absolute;
+    bottom: 4px;
+}
+
 // サインアップページのスタイル
 .login-upper-area-container{
     display: block;
@@ -171,6 +187,16 @@ img.login_letter {
 .signupform-area{
     text-align: center;
     width: 100%;
+}
+
+.avatar-imagearea_new{
+    display: grid;
+}
+
+.imageselectword{
+    margin-top: 20px;
+    color: #797979;
+
 }
 
 .form {
@@ -188,7 +214,9 @@ img.login_letter {
 }
 
 .registeractions{
-    width: 100%;
+    width: 255px;
+    margin: auto;
+    text-align: right;
 }
 
 .register_btn{
@@ -212,16 +240,34 @@ img.login_letter {
 
 img.signup-bottom-wave {
     left: 0;
-    position: absolute;
-    top: 850px;
+    bottom: -35px;
     transform: scale(1.9);
+    position: relative;
 }
 
 a.login_at_signup {
-    position: relative;
+    position: absolute;
     z-index: 10;
+    left: 10px;
+    color: #ffd252;
 }
 
+.loginbtnarea {
+    width: 260px;
+    margin: auto;
+    position: relative;
+}
+
+i.fas.fa-caret-right.at_signup {
+    display: flex;
+    position: absolute;
+    top: 26px;
+    color: #ffd252;
+}
+
+a.login_at_signup:hover{
+    color: #f76b07;
+}
 
 // ユーザーマイページ
 div#map {
@@ -255,7 +301,7 @@ div#map {
 .usericonarea {
     display: flex;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     margin-left: 20px;
 }
 
@@ -298,8 +344,9 @@ i.fas.fa-sign-out-alt {
     margin-left: 30px;
 }
 
+
 .place-content{
-    display: inline-flex;
+    display: flex;
     overflow: scroll;
     width: 100%;
 }
@@ -423,6 +470,10 @@ i.fas.fa-heart {
     margin-left: 3px;
 }
 
+.nil-message{
+    margin-left: 58px;
+}
+
 /* 上げ下げの実装 */
 .mypagepost{
     bottom: -38vh;
@@ -459,7 +510,7 @@ i.fas.fa-heart {
     top: 10px;
 }
 .mypagepost.up{
-    bottom: 0;
+    bottom: 47px;
     transition: 1s;
     padding-left: 5px;
 }
@@ -516,6 +567,7 @@ img#avatar_img_prev {
     width: 130px;
     height: 130px;
     border-radius: 90px;
+    margin: auto;
 }
 
 .avatar-imagearea{
@@ -688,16 +740,16 @@ img.bookmark-banner1 {
 // ユーザーページのスタイル
 .postcard_show{
     padding: 5px;
-    width: px;
+    min-width: 200px;
+    max-width: 200px;
     height: 280px;
     border-radius: 5px 5px 5px 5px;
     box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
     padding-left: 20px;
     margin-bottom: 50px;
     padding-right: 20px;
-    margin-right: 10px;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 15px;
+    margin-top: 10px;;
 }
 
 
@@ -757,6 +809,16 @@ img.bookmark-banner1 {
         display: none;
     }
 
+    .place-content {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .postcard_mypage {
+        scroll-snap-align: center;
+    }
+
+
 
 }
 
@@ -780,7 +842,7 @@ img.bookmark-banner1 {
     .custom-shape-divider-bottom-1608270498 {
         position: absolute;
         display: block;
-        bottom: 44vh;
+        bottom: 40vh;
         left: 0;
         width: 100%;
         overflow: hidden;

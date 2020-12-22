@@ -7,20 +7,14 @@
 
         <div class="usericonarea">
             <% if @user.image.present? %>
-                <%= image_tag @user.image_url, size: "50x50",class: 'usericon_userindex' %>
+                <%= image_tag @user.image_url, size: "30x30",class: 'usericon_userindex' %>
             <% else %>
-                <i class="fas fa-user-circle fa-3x" style="color:#B0AFAF"></i>
+                <i class="fas fa-user-circle fa-2x" style="color:#B0AFAF"></i>
             <% end %>
             <p class="username">
                 <%= @user.name  %>
             </p>
-            <div class="twoicons_mypage"> 
-                <%= link_to(content_tag(:i, '', class: 'fas fa-user-edit fa-2x'), edit_user_registration_path) %>
-                <%= link_to content_tag(:i, '', class: 'fas fa-sign-out-alt fa-2x'), destroy_user_session_path, method: :delete %>
-            </div>
         </div>
-
-        <i class="fas fa-user-circle　fa-2x"></i>
 
         <% @genres.each do |g| %>
             <div class="genreheading">
