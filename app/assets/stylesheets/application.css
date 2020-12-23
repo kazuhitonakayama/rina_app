@@ -24,7 +24,11 @@
      margin: 0;
  }
 
-
+body{
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+    overflow-y: scroll;
+}
  
  .box{
      width: 100%;
