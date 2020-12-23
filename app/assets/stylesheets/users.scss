@@ -905,7 +905,18 @@ img.bookmark-banner1 {
         scroll-snap-align: center;
     }
 
+    .postcard_show {
+        scroll-snap-align: center;
+    }
 
+    .popularpostbox {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .postcard_index {
+        scroll-snap-align: center;
+    }
 
 }
 
