@@ -17,14 +17,14 @@
     <div class="threeshareicon"> 
       <i class="fas fa-paperclip fa-2x" id="js-copy"></i>
       <script>
-        @url = location.href
+        @url=location.href
       </script>
       <%# 以下2行でLINEアイコンの実装 %>
         <div class="line-it-button" data-lang="ja" data-type="share-b" data-ver="3" data-url="<%= @url %>" data-color="grey" data-size="small" data-count="false" style="display: none;"></div>
         <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
       <%= link_to(content_tag(:i, '', class: 'fab fa-twitter fa-2x'), "https://twitter.com/share?url=#{request.url}", target: '_blank') %>
     </div>
-
+ 
     <div class="twoicons_index">
       <% if user_signed_in? %>
             <% if current_user.already_bookmarked?(@place) %>
