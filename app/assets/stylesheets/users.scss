@@ -541,13 +541,20 @@ i.fas.fa-heart {
     text-align: center
 }
 
+.editprofileactions {
+    width: 260px;
+    margin: auto;
+    text-align: right;
+}
+
 .editprofile_btn{
     color: #fff;
     background-color: #FFD252;
     height: 40px;
     width: 140px;
     border-radius: 20px;
-    border: 1px solid #646464;
+    border: 1px solid aliceblue;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
     left: 10%;
     position: relative;
     margin: 20px;
@@ -590,6 +597,29 @@ img {
 
 .hidden_img{
     display: none;
+}
+
+.accountdeletearea {
+    width: 270px;
+    margin: auto;
+    position: relative;
+}
+
+i.fas.fa-caret-right.at_profileedit {
+    position: absolute;
+    color: #ffd252;
+}
+
+.fa-caret-right:before {
+    content: "\f0da";
+    position: absolute;
+    bottom: 4px;
+    transform: translate(0px, 26px);
+}
+
+a.accountdelete {
+    margin-left: 10px;
+    color: black;
 }
 
 // ユーザー一覧ページのスタイル
