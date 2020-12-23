@@ -299,15 +299,18 @@ select#place_genre_id {
 
 // 投稿詳細ページ　デザイン
 .placeshowlagebox{
-    overflow: scroll;
-    height: 60vh;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
 }
 img.postnoimage_show{
     width: 100%;
 }
 .placeimgbox_show{
     position: relative;
-
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
 }
 .placeimg_show{
     width: 100%;
@@ -458,7 +461,7 @@ i.fas.fa-heart.at_place_show_under{
 .heartuserbox{
     margin-top: 10px;
     overflow: scroll;
-    height: 40vh;
+    height: 300px;
 }
 
 .usericon_placeshow{
