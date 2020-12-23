@@ -1,13 +1,12 @@
 
 
   <div>
-    <input id="pac-input" class="controls searcharea" type="text" placeholder="Enter a location"/>
+    <input id="pac-input" class="controls searcharea" type="text" placeholder="ここで場所を検索🎉"/>
   </div>
 
   <div id="map"></div>
   <div id="infowindow-content">
       <span id="place-name"></span><i class="fas fa-arrow-circle-down" id="get_place_name"></i>
-      <span id="place-address"></span>
   </div>
 
 
@@ -90,10 +89,12 @@ function initMap() {
   });
   const input = document.getElementById("pac-input");
   const autocomplete = new google.maps.places.Autocomplete(input);
+
   autocomplete.bindTo("bounds", map);
   // Specify just the place data fields that you need.
   autocomplete.setFields(["place_id", "geometry", "name"]);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
 
@@ -155,16 +156,19 @@ infoareaclose.addEventListener('click',function(){
   (function(){
       'use strict';
 
-      //jsの中でも、「classを付けたり外したりする機能」について話します
-
-      // showっていう名前がついてる要素を取得してshowっていう変数に入れる
+      // 場所の名前を取得するアイコンの要素を取得
       var get_place_name = document.getElementById('get_place_name');
+      var postinfoarea = document.getElementById('index-infomation-area');
+      var windowarrow = document.getElementById('infoarea-close');
 
-      //ここ
-      //showをクリックしたらbodyのクラス名にmenu-openを追加する
-      get_place_name.addEventListener('click' , function(){　//showがクリックされた時に{}の処理を実行します
-          const placename = document.getElementById("place-name");  
+      // 場所の名前を取得するアイコンをクリックしたら
+      get_place_name.addEventListener('click' , function(){
+          // 場所の名前を表示する要素を取得
+          const placename = document.getElementById("place-name");
+          postinfoarea.classList.add("up");
+          windowarrow.className="fas fa-chevron-down heading-down";
 
+          // 投稿の入力欄にplacenameの値ぶちこむ
           const target = document.getElementById("target");
           target.value = placename.textContent
       });
