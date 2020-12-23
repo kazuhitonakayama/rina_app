@@ -37,12 +37,17 @@
           <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-v fa-rotate-90'), genres_path) %>
         </div>
 
-        <p class="formbox_newpost_photo">
-          <i class="fas fa-images fa-2x"></i>
-            <%= f.label :写真を追加,for: "postnew_img", class: 'profileimagetext' %>
-            <%= f.file_field :image, id: 'postnew_img', class: 'profileimage' %>
-        </p>
+        
+          <div class="place-imagearea_new">
+                <%= image_tag "noimage.png",class: 'noimage_postnew' %>
+                <img id="place_photo_prev" src="#" class='place_img' />
+
+                <%= f.label :写真を追加,for: "postnew_img", class: 'profileimagetext' %>
+                <%= f.file_field :image, id: 'postnew_img', class: 'profileimage' %>
+          </div>            
       
+      
+
         <div class="field_newpost">
             <%= f.text_field :comment,placeholder: "コメント",class: 'formbox_newpost' %>
         </div>
@@ -166,4 +171,29 @@ infoareaclose.addEventListener('click',function(){
 
   })();
 </script>
+
+<script>
+  // 画像のプレビュー
+  $( document ).on('turbolinks:load', function() {
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $('#place_photo_prev').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  
+    $("#postnew_img").change(function(){
+      $('#place_photo_prev').removeClass('place_img');
+      $('.noimage_postnew').remove();
+      readURL(this);
+    });
+  });
+</script>
+
+
 <script async defer src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyA9yp6zF2P9BMRMMnXzOSE9KfajGbKf7i4&libraries=geometry,places&callback=initMap"></script>
+
+

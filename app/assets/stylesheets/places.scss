@@ -108,6 +108,27 @@ input#file-upload-bottom{
     margin-top: 20px;
     display: flex;
 }
+.place_img{
+    display: none;
+}
+
+img#place_photo_prev {
+    width: 270px;
+    height: 200px;
+    margin-top: 20px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+label.profileimagetext {
+    text-align: right;
+    width: 260px;
+    margin-top: 10px;
+}
+
+img.noimage_postnew {
+    height: 200px;
+    width: 270px;
+}
 
 .profileimagetext{
     color: #646464;
