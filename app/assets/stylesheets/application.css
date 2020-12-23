@@ -36,7 +36,7 @@ body{
      color: #ffd252;
      background-color: #ffd252;
      z-index: 2;
-     position: relative;
+     position: absolute;
      top: 0;
  }
 .allicon{
