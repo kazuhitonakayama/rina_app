@@ -779,7 +779,7 @@ h2.popular_post::before {
     max-width: 200px;
     height: 280px;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(235, 222, 222, 0.25) 0px 2px 6px 0px;
     padding-left: 20px;
     margin-bottom: 50px;
     padding-right: 20px;
@@ -795,6 +795,8 @@ h2.popular_post::before {
 img.bookmark-banner1 {
     display: block;
     margin: auto;
+    width: 100%;
+    max-width: 900px;
 }
 
 .bookmarkarea{
