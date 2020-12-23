@@ -624,6 +624,7 @@ input#search {
     max-height: 300px;
     max-width: 380px;
     margin: 20px auto;
+    overflow-y: scroll;
 }
 
 .usericon_area::-webkit-scrollbar {
@@ -776,6 +777,7 @@ img.bookmark-banner1 {
 
     .usericon_area {
         max-width: 260px;
+        
     }
 
     
