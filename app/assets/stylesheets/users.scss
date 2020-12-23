@@ -242,7 +242,7 @@ img.signup-bottom-wave {
     left: 0;
     bottom: -35px;
     transform: scale(1.9);
-    position: relative;
+
 }
 
 a.login_at_signup {
@@ -267,6 +267,10 @@ i.fas.fa-caret-right.at_signup {
 
 a.login_at_signup:hover{
     color: #f76b07;
+}
+
+.signup-container {
+    overflow: hidden;
 }
 
 // ユーザーマイページ
