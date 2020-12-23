@@ -163,12 +163,12 @@ img.login_letter {
     margin: auto;
 }
 
-i.fas.fa-caret-right.at_login {
+.signuparea i.fas.fa-caret-right.at_login {
     display: flex;
     color: #ffffff;
 }
 
-.fa-caret-right:before {
+.signuparea .fa-caret-right:before {
     content: "\f0da";
     position: absolute;
     bottom: 4px;
@@ -225,7 +225,8 @@ i.fas.fa-caret-right.at_login {
     height: 40px;
     width: 140px;
     border-radius: 20px;
-    border: 1px solid #646464;
+    border: 1px solid aliceblue;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
     left: 10%;
     position: relative;
     margin: 20px;
@@ -258,10 +259,10 @@ a.login_at_signup {
     position: relative;
 }
 
-i.fas.fa-caret-right.at_signup {
+.loginbtnarea i.fas.fa-caret-right.at_signup {
     display: flex;
     position: absolute;
-    top: 26px;
+    top: 6px;
     color: #ffd252;
 }
 
@@ -610,12 +611,12 @@ img {
     padding-bottom: 200px;
 }
 
-i.fas.fa-caret-right.at_profileedit {
+.accountdeletearea i.fas.fa-caret-right.at_profileedit {
     position: absolute;
     color: #ffd252;
 }
 
-.fa-caret-right:before {
+.accountdeletearea .fa-caret-right:before {
     content: "\f0da";
     position: absolute;
     bottom: 4px;
@@ -624,7 +625,7 @@ i.fas.fa-caret-right.at_profileedit {
 
 a.accountdelete {
     margin-left: 10px;
-    color: black;
+    color: #494848;
 }
 
 // ユーザー一覧ページのスタイル
