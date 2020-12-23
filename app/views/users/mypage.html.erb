@@ -3,10 +3,8 @@
 
 
     <div class="mypagepost" id="index-infomation-area">
-
-        <i class="fas fa-chevron-down heading-top" id="infoarea-close"></i>
-
         <div class="usericonarea">
+            <i class="fas fa-chevron-down heading-top" id="infoarea-close"></i>
             <% if @user.image.present? %>
                 <%= image_tag @user.image_url, size: "30x30",class: 'usericon_userindex' %>
             <% else %>
