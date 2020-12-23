@@ -202,14 +202,23 @@ form#new_place {
     position: absolute;
     right: 30px;
     top: 10px;
+    z-index: 21;
+    -webkit-transform: rotate(180deg) scale(1.5);
+    -moz-transform: rotate(180deg) scale(1.5);
+    -ms-transform: rotate(180deg) scale(1.5);
+    -o-transform: rotate(180deg) scale(1.5);
 }
 .fas.fa-chevron-down.heading-down {
-    transform: rotate(0deg) scale(1.5);
     transition: 1s;
+    z-index: 21;
     position: absolute;
     right: 30px;
     top: 10px;
-    transform: scale(1.5);
+    transform: rotate(0deg) scale(1.5);
+    -webkit-transform: rotate(0deg) scale(1.5);
+    -moz-transform: rotate(0deg) scale(1.5);
+    -ms-transform: rotate(0deg) scale(1.5);
+    -o-transform: rotate(0deg) scale(1.5);
 }
 .newpostpage.up{
     bottom: 0;

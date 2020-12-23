@@ -320,9 +320,17 @@ div#map {
 
 .usericonarea {
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 45px;
-    margin-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    padding-left: 20px;
+    background: #fff;
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+}
+
+.mypagepost .postsetarea {
+    padding-top: 100px;
 }
 
 .usericon_mypage{
@@ -507,25 +515,25 @@ i.fas.fa-heart {
 
 /* 上げ下げの実装 */
 .mypagepost{
-    bottom: -38vh;
+    bottom: -450px;
     z-index: 4;
-    position: absolute;
+    position: fixed;
     width: 100%;
     background-color: #ffffff;
-    height: 60vh;
+    height: 600px;
     // overflow: scroll;
     transition: 1s;
 }
-.fas.fa-chevron-down.heading-top {
-    transform: rotate(180deg) scale(1.5);
+.mypagepost .fas.fa-chevron-down.heading-top {
+    transform: rotate(180deg) scale(2.5);
     transition: 1s;
     position: absolute;
     right: 30px;
-    top: 10px;
-    -webkit-transform: rotate(180deg) scale(1.5);
-    -moz-transform: rotate(180deg) scale(1.5);
-    -ms-transform: rotate(180deg) scale(1.5);
-    -o-transform: rotate(180deg) scale(1.5);
+    top: 20px;
+    -webkit-transform: rotate(180deg) scale(2.5);
+    -moz-transform: rotate(180deg) scale(2.5);
+    -ms-transform: rotate(180deg) scale(2.5);
+    -o-transform: rotate(180deg) scale(2.5);
 }
 .fa-chevron-down:before {
     content: "\f078";
@@ -537,16 +545,16 @@ i.fas.fa-heart {
     color: #B0AFAF;
 }
 
-.fas.fa-chevron-down.heading-down {
-    transform: rotate(0deg) scale(1.5);
+.mypagepost .fas.fa-chevron-down.heading-down {
+    transform: rotate(0deg) scale(2.5);
     transition: 1s;
     position: absolute;
     right: 30px;
-    top: 10px;
-    -webkit-transform: rotate(0deg) scale(1.5);
-    -moz-transform: rotate(0deg) scale(1.5);
-    -ms-transform: rotate(0deg) scale(1.5);
-    -o-transform: rotate(0deg) scale(1.5);
+    top: 20px;
+    -webkit-transform: rotate(0deg) scale(2.5);
+    -moz-transform: rotate(0deg) scale(2.5);
+    -ms-transform: rotate(0deg) scale(2.5);
+    -o-transform: rotate(0deg) scale(2.5);
 }
 .mypagepost.up{
     bottom: 47px;
