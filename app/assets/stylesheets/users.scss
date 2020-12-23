@@ -800,6 +800,7 @@ img.bookmark-banner1 {
 .postcard_bookmark{
     padding: 5px;
     max-width: 200px;
+    min-width: 200px;
     width: 100%;
     height: 280px;
     border-radius: 5px 5px 5px 5px;
@@ -972,6 +973,18 @@ img.bookmark-banner1 {
         -ms-transform: translateY(0px);
         -o-transform: translateY(0px);
 }
+
+    .bookmarkarea{
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        width: 100%;
+}
+
+    .postcard_bookmark{
+        scroll-snap-align: center;
+}
+
     
     /** For tablet devices **/
     @media (min-width: 768px) and (max-width: 1023px) {
