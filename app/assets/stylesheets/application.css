@@ -104,11 +104,6 @@ i#get_place_name.display {
     display: block;
 }
 
-div.modal-content {
-    z-index: 100;
-}
-
-
 @media screen and (max-width: 500px ) {
     .allicon {
         display: flex;
