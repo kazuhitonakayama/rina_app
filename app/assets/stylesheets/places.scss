@@ -10,6 +10,7 @@
 }
 input[type='radio'].star-radio {
     display: none;
+    -webkit-appearance: none;
 }
 span.star {
     color: gray;;
@@ -20,6 +21,7 @@ label {
 }
 input[type='radio'].star-radio:checked ~ label span.star{
     color: #ffcc00;
+    -webkit-appearance: none;
 }
 // ★評価のためのCSS fin
 
