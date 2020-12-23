@@ -101,7 +101,7 @@ i#get_place_name {
     display: none;
 }
 i#get_place_name.display {
-    display: block;
+    display: inline-block;
 }
 
 @media screen and (max-width: 500px ) {
