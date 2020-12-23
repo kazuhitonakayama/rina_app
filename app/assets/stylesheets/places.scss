@@ -35,6 +35,17 @@ input#pac-input {
     border: 1px solid #646464;
     align-items: center;
 }
+input.searcharea {
+    /* display: block; */
+    width: 90% !important;
+    max-width: 600px;
+    /* position: absolute !important; */
+    left: 0% !important;
+    top: 3% !important;
+    /* margin-left: 7% !important; */
+    margin: 0px auto 0px 50% !important;
+    transform: translateX(-50%);
+}
 
 
    
