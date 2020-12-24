@@ -35,7 +35,7 @@
     <div class="popularpostarea">
         <h2 class="popular_post">人気の投稿</h2>
             <div class="popularpostbox">
-                <% @places.first(7).each do |p| %>
+                <% @places.first(10).each do |p| %>
                             <div class="postcard_index">
                                 <div class="bookmarkarea_post">
                                     <% if user_signed_in? %>
