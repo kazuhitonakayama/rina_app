@@ -6,6 +6,9 @@
 .stararea {
     display: flex;
     flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
     justify-content: flex-end;
 }
 input[type='radio'].star-radio {
@@ -151,13 +154,6 @@ select#place_genre_id {
     height: 40px;
     border-radius: 10px 10px 10px 10px;
     border: 1px solid #646464;
-}
-
-.stararea {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    margin-left: 20px;
 }
 
 .newpost_btnarea{
