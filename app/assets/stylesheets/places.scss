@@ -22,6 +22,8 @@ label {
     text-align: center;
     margin: 0px 10px;
 }
+input[type='radio'].star-radio:hover,
+input[type='radio'].star-radio:hover ~ label,
 input[type='radio'].star-radio:checked ~ label span.star{
     color: #ffcc00;
     -webkit-appearance: none;
