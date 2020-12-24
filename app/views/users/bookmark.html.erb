@@ -55,7 +55,7 @@
 
                                     
                                     <div class="twoicons_post">
-                                        <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id)) %>
+                                        <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-h'), place_path(p.id),data: {"turbolinks"=>false}) %>
                                     
                                         <% if user_signed_in? %>
                                             <% if current_user.already_liked?(p) %>
