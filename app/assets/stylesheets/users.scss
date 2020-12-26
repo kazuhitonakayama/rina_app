@@ -40,10 +40,11 @@ lottie-player {
 }
 
 .login-backgroundbox{
-    position: relative;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     box-sizing: border-box;
-    height: 40vh;
+    // height: 40vh;
     background-color: #FFD252;
     z-index: 2;
 }
@@ -183,7 +184,7 @@ img.login_letter {
 }
 
 .login-upper-area {
-    height: 60vh;
+    // height: 60vh;
 }
 
 // サインアップページのスタイル
