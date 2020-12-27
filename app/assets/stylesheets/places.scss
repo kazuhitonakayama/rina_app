@@ -63,7 +63,7 @@ input.searcharea {
 .newpostpage{
     bottom: 0%;
     z-index: 4;
-    position: absolute;
+    position: fixed;
     width: 100%;
     background-color: #ffffff;
     height: 60vh;
@@ -78,10 +78,13 @@ input.searcharea {
     height:35px;
     background-color: #ffd252;
     margin-top: 20px;
+    position: fixed;
 }
 
 .newpostcontent{
     width: 100%;
+    margin-top: 85px;
+    
 }
 
 .newpost_textarea{
@@ -170,23 +173,33 @@ select#place_genre_id {
     height: 40px;
     width: 140px;
     border-radius: 20px;
-    border: 1px solid #646464;
+    border: none;
     position: relative;
+    box-shadow: rgba(233, 233, 233, 0.25) 0px 0px 8px 0px, rgba(163, 163, 163, 0.25) 0px 2px 6px 0px;
     margin-top: 20px;
     z-index: 2;
 }
+
 
 form#new_place {
     width: 80%;
     max-width: 900px;
     margin: auto;
+    margin-bottom: 30px;
+}
+
+.newppostlargearea {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    background-color: #ffffff;
 }
 
 /* 上げ下げの実装 */
 .newpostpage{
-    bottom: -42vh;
+    bottom: -45vh;
     z-index: 4;
-    position: absolute;
+    position: fixed;
     width: 100%;
     background-color: #ffffff;
     height: 60vh;
@@ -195,16 +208,17 @@ form#new_place {
     padding-bottom: 59px;
 }
 .fas.fa-chevron-down.heading-top {
-    transform: rotate(180deg) scale(1.5);
+    transform: rotate(180deg) scale(2.5);
     transition: 1s;
     position: absolute;
     right: 30px;
     top: 10px;
     z-index: 21;
-    -webkit-transform: rotate(180deg) scale(1.5);
-    -moz-transform: rotate(180deg) scale(1.5);
-    -ms-transform: rotate(180deg) scale(1.5);
-    -o-transform: rotate(180deg) scale(1.5);
+    -webkit-transform: rotate(180deg) scale(2.5);
+    -moz-transform: rotate(180deg) scale(2.5);
+    -ms-transform: rotate(180deg) scale(2.5);
+    -o-transform: rotate(180deg) scale(2.5);
+  
 }
 .fas.fa-chevron-down.heading-down {
     transition: 1s;
@@ -212,16 +226,18 @@ form#new_place {
     position: absolute;
     right: 30px;
     top: 10px;
-    transform: rotate(0deg) scale(1.5);
-    -webkit-transform: rotate(0deg) scale(1.5);
-    -moz-transform: rotate(0deg) scale(1.5);
-    -ms-transform: rotate(0deg) scale(1.5);
-    -o-transform: rotate(0deg) scale(1.5);
+    transform: rotate(0deg) scale(2.5);
+    -webkit-transform: rotate(0deg) scale(2.5);
+    -moz-transform: rotate(0deg) scale(2.5);
+    -ms-transform: rotate(0deg) scale(2.5);
+    -o-transform: rotate(0deg) scale(2.5);
+    
 }
 .newpostpage.up{
     bottom: 0;
     transition: 1s;
     padding-bottom: 59px;
+    position: fixed;
 }
 
 /* end */
