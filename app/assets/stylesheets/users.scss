@@ -942,7 +942,11 @@ img.bookmark-banner1 {
         -moz-transform: translate(-148px, 35px);
         -ms-transform: translate(-148px, 35px);
         -o-transform: translate(-148px, 35px);
-}
+    }
+
+    .login-upper-area {
+        transform: translate(0px, -50px);
+    }
     
     .allicon {
         display: flex;
