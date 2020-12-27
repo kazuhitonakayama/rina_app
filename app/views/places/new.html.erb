@@ -33,7 +33,7 @@
           <% if user_signed_in? %>
             <%= f.select :genre_id, Genre.where(user_id: current_user.id).or(Genre.where(user_id: 1)).map{|o| [o.name, o.id]}%>
           <% end %>
-          <%= link_to(content_tag(:i, '', class: 'fas fa-ellipsis-v fa-rotate-90'), genres_path) %>
+          <%= link_to "＋リスト追加", genres_path, class: 'genreedit_placenew' %>
         </div>
 
         
